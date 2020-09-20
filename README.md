@@ -14,7 +14,7 @@ E.g. if you are using Plug:
 
 Add a mapping to `AngelDoc#InsertXmlDoc()` in your .vimrc.
 
-EG:
+Example:
 ```
 nnoremap /// :call AngelDoc#InsertXmlDoc()<CR>
 ```
