@@ -1,5 +1,9 @@
 # angeldoc-vim
 
+An open-source replacement for GhostDoc in Vim.
+
+![Demo](assets/AngelDoc.gif)
+
 
 ## Seting it up
 Put the plugin in your vimrc.
