@@ -7,9 +7,13 @@ An open-source replacement for GhostDoc for Vim and NeoVim.
 
 ## Seting it up
 Put the plugin in your vimrc.
+
 E.g. if you are using Plug:
+
 `Plug 'jpfeiffer16/angeldoc-vim'`
+
 Add a mapping to `AngelDoc#InsertXmlDoc()` in your .vimrc.
+
 EG:
 ```
 nnoremap /// :call AngelDoc#InsertXmlDoc()<CR>
