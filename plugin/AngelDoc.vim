@@ -52,3 +52,24 @@ function! AngelDoc#InsertXmlDocNeoVim(command, code)
     call jobwait([job], 500)
 endfunction
 
+function! AngelDoc#Install(version='')
+    let plugin_root_dir = expand('<sfile>:p:h')
+    echo plugin_root_dir
+    if has('win32')
+        let script = shellescape('powershell '.plugin_root_dir.'/manage-releases.ps1')
+        let script_command = printf('%s', script)
+        if !empty(a:version)
+            let script_command = script_command.' -v '.a:version
+        endif
+        execute '!'.script_command
+    else
+        let script = shellescape(plugin_root_dir.'/manage-releases.sh')
+        let script_command = printf('%s', script)
+        if !empty(a:version)
+            let script_command = script_command.' -v '.a:version
+        endif
+        execute '!'.script_command
+    endif
+endfunction
+
+command! -bar -nargs=? AngelDocInstall call AngelDoc#Install(<f-args>)

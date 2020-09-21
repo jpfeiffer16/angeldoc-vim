@@ -19,6 +19,9 @@ Example:
 nnoremap /// :call AngelDoc#InsertXmlDoc()<CR>
 ```
 
+Once the plugin is installed, run `:AngelDocInstall` to install the latest release.
+The plugin should now work.
+
 ### Windows
 
 `powershell .\manage-releases.ps1`
