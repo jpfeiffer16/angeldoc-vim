@@ -23,7 +23,7 @@ Once the plugin is installed, run `:AngelDocInstall` to install the latest relea
 The plugin should now work.
 
 ## Troubleshooting
-If you run into issue running the `AngelDocInstall` command. Try running the below commands from the terminal in the plugin dir for `angeldoc-vim` to manually install the latest release of the AngelDoc tool.
+If you run into issues running the `AngelDocInstall` command try running the below commands from the terminal in the plugin dir for `angeldoc-vim` to manually install the latest release of the AngelDoc tool.
 
 ### Windows
 
