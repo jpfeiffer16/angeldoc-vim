@@ -1,0 +1,18 @@
+if &compatible
+  set nocompatible
+endif
+
+filetype off
+
+" Assuming that we are using vim-plugged here.
+let angeldocdir = expand("\<sfile>:h:h")
+let plugindir = fnamemodify('~', ':p').'.vim/bundle'
+
+let &runtimepath .= ',' . plugindir . '/vader.vim'
+let &runtimepath .= ',' . angeldocdir
+
+filetype plugin indent on
+syntax on
+set cmdheight=3
+set expandtab
+set shiftwidth=2

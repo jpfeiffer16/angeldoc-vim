@@ -1,0 +1,25 @@
+Given cs():
+  publc class Test
+  {
+    public bool InsertRecord(int id, string name)
+    {
+    }
+  }
+
+Execute(insert xml doc):
+  call search("public bool")
+  call AngelDoc#InsertXmlDoc()
+
+
+Expect(should insert xml doc):
+  publc class Test
+  {
+    /// <summary>
+    /// Inserts record.
+    /// </summary>
+    /// <param name="id">The id.</param>
+    /// <param name="name">The name.</param>
+    public bool InsertRecord(int id, string name)
+    {
+    }
+  }
