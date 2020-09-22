@@ -1,3 +1,4 @@
+![Logo](assets/AngelDocLogo.png)
 # angeldoc-vim
 
 An open-source replacement for GhostDoc for Vim and NeoVim.
