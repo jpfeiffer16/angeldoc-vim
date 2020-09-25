@@ -1,3 +1,5 @@
+let s:plugin_root_dir = expand('<sfile>:p:h:h')
+
 function! AngelDoc#InsertXmlDoc()
     let command = 'dotnet '.fnamemodify('~', ':p').'.angeldoc/bin/AngelDoc.dll - gendoccsharp '.line('.')
     let code = join(getline(1,'$'), "\n")
@@ -52,21 +54,23 @@ function! AngelDoc#InsertXmlDocNeoVim(command, code)
     call jobwait([job], 500)
 endfunction
 
-function! AngelDoc#Install(version='')
-    let plugin_root_dir = expand('<sfile>:p:h')
-    echo plugin_root_dir
+function! AngelDoc#Install(...)
+    let angeldoc_version = ''
+    if a:0 > 0
+        let angeldoc_version = a:1
+    endif
     if has('win32')
-        let script = shellescape('powershell '.plugin_root_dir.'/manage-releases.ps1')
+        let script = shellescape('powershell '.s:plugin_root_dir.'/manage-releases.ps1')
         let script_command = printf('%s', script)
-        if !empty(a:version)
-            let script_command = script_command.' -v '.a:version
+        if !empty(angeldoc_version)
+            let script_command = script_command.' -v '.angeldoc_version
         endif
         execute '!'.script_command
     else
-        let script = shellescape(plugin_root_dir.'/manage-releases.sh')
+        let script = shellescape(s:plugin_root_dir.'/manage-releases.sh')
         let script_command = printf('%s', script)
-        if !empty(a:version)
-            let script_command = script_command.' -v '.a:version
+        if !empty(angeldoc_version)
+            let script_command = script_command.' -v '.angeldoc_version
         endif
         execute '!'.script_command
     endif
