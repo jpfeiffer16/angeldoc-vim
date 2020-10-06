@@ -1,7 +1,13 @@
 let s:plugin_root_dir = expand('<sfile>:p:h:h')
 
+let s:angeldoc_path = get(g:, 'angeldoc_path', '')
+
 function! AngelDoc#InsertXmlDoc()
-    let command = 'dotnet '.fnamemodify('~', ':p').'.angeldoc/bin/AngelDoc.dll - gendoccsharp '.line('.')
+    if (empty(s:angeldoc_path))
+        let command = 'dotnet '.fnamemodify('~', ':p').'.angeldoc/bin/AngelDoc.dll - gendoccsharp '.line('.')
+    else
+        let command = 'dotnet '.s:angeldoc_path.' - gendoccsharp '.line('.')
+    endif
     let code = join(getline(1,'$'), "\n")
     execute "normal! mA"
     if has('nvim')

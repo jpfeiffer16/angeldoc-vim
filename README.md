@@ -20,6 +20,14 @@ Example:
 nnoremap /// :call AngelDoc#InsertXmlDoc()<CR>
 ```
 
+## Configuration
+You can configure the dotnet binary to run to get the documentation by setting the g:angeldoc_path variable in your vimrc.
+
+Example:
+```
+let g:angeldoc_path = '/home/myuser/Source/AngelDoc/AngelDoc/bin/Debug/AngelDoc.dll'
+```
+
 Once the plugin is installed, run `:AngelDocInstall` to install the latest release.
 The plugin should now work.
 
